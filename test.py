@@ -19,7 +19,8 @@ def _(mo):
 @app.cell
 def _():
     import marimo as mo
-    return (mo,)
+    import numpy as np
+    return mo, np
 
 
 @app.cell
@@ -41,6 +42,12 @@ def _(mo, slider):
     {"##" + "🍃" * slider.value}
     """
     )
+    return
+
+
+@app.cell
+def _(np, slider):
+    np.arange(slider.value)
     return
 
 
